@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-external
+  namespace: youtoo
+spec:
+  type: ExternalName
+  externalName: $(DATABASE_HOST)
