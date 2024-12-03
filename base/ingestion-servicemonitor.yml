@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: youtoo-ingestion-metrics
-  namespace: telemetrynamespace
+  namespace: telemetry
   labels:
     release: prometheus-operator
 spec:

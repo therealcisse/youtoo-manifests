@@ -5,4 +5,4 @@ metadata:
   namespace: youtoo
 spec:
   type: ExternalName
-  externalName: $(DATABASE_HOST)
+  externalName: "$(DATABASE_HOST)"

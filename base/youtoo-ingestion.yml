@@ -16,14 +16,14 @@ spec:
       labels:
         app: youtoo-ingestion
         app.kubernetes.io/name: youtoo-ingestion
-        app.kubernetes.io/version: $(VERSION)
+        app.kubernetes.io/version: "$(VERSION)"
         app.kubernetes.io/part-of: youtoo
       annotations:
-        sidecar.opentelemetry.io/inject: $(OTEL_COLLECTOR)
+        sidecar.opentelemetry.io/inject: "$(OTEL_COLLECTOR)"
     spec:
       containers:
         - name: youtoo-ingestion
-          image: youtoo-ingestion:$(VERSION)
+          image: "youtoo-ingestion:$(VERSION)"
           imagePullPolicy: IfNotPresent
           ports:
             - name: web
@@ -45,7 +45,7 @@ spec:
                   name: app-secrets
                   key: DATABASE_PASSWORD
             - name: YOUTOO_LOG_LEVEL
-              value: $(LOG_LEVEL)
+              value: "$(LOG_LEVEL)"
           resources:
             limits:
               cpu: "2"
