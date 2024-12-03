@@ -4,4 +4,4 @@ metadata:
   name: app-config
   namespace: youtoo
 data:
-  INGESTION_SNAPSHOTS_THRESHOLD: 64
+  INGESTION_SNAPSHOTS_THRESHOLD: "64"
