@@ -4,5 +4,5 @@ metadata:
   name: database-config
   namespace: youtoo
 data:
-  DATABASE_URL: jdbc:postgresql://host.docker.internal:5432/youtoo
+  DATABASE_URL: "jdbc:postgresql://host.docker.internal:5432/youtoo"
 
