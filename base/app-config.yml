@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: youtoo
+data:
+  - INGESTION_SNAPSHOTS_THRESHOLD=64

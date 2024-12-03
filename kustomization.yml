@@ -6,11 +6,4 @@ resources:
   - base/database-service.yaml
   - base/app-secrets.yaml
 
-configMapGenerator:
-  - name: app-config
-    literals:
-      - INGESTION_SNAPSHOTS_THRESHOLD=64
-  - name: database-config
-    literals:
-      - DATABASE_URL=jdbc:postgresql://host.docker.internal:5432/youtoo
 
