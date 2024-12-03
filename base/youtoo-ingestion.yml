@@ -16,14 +16,14 @@ spec:
       labels:
         app: youtoo-ingestion
         app.kubernetes.io/name: youtoo-ingestion
-        app.kubernetes.io/version: 0.1.0-809f03e
+        app.kubernetes.io/version: 0.1.0-57e3098
         app.kubernetes.io/part-of: youtoo
       annotations:
         sidecar.opentelemetry.io/inject: telemetry/youtoo-otel
     spec:
       containers:
         - name: youtoo-ingestion
-          image: youtoo-ingestion:0.1.0-809f03e
+          image: youtoo-ingestion:0.1.0-57e3098
           imagePullPolicy: IfNotPresent
           ports:
             - name: web
