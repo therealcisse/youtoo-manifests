@@ -1,11 +1,11 @@
 namespace: youtoo
 resources:
-  - youtoo-ingestion.yaml
-  - youtoo-ingestion-service.yaml
-  - database-config.yaml
-  - ingestion-servicemonitor.yaml
-  - database-service.yaml
-  - app-secrets.yaml
+  - base/youtoo-ingestion.yaml
+  - base/youtoo-ingestion-service.yaml
+  - base/database-config.yaml
+  - base/ingestion-servicemonitor.yaml
+  - base/database-service.yaml
+  - base/app-secrets.yaml
 
 configMapGenerator:
   - name: app-config
@@ -16,3 +16,4 @@ configMapGenerator:
       - DATABASE_HOST=host.docker.internal
       - DATABASE_DB_NAME=youtoo
       - OTEL_COLLECTOR=telemetry/youtoo-otel
+
