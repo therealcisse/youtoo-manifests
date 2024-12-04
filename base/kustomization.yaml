@@ -5,6 +5,7 @@ resources:
   - ingestion-servicemonitor.yaml
   - database-service.yaml
   - app-config.yaml
+  - app-secrets.yaml
   - database-config.yaml
 
 
