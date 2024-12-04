@@ -42,12 +42,12 @@ spec:
             - name: DATABASE_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: doppler-app-secrets
+                  name: app-secrets
                   key: DATABASE_USERNAME
             - name: DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: doppler-app-secrets
+                  name: app-secrets
                   key: DATABASE_PASSWORD
             - name: YOUTOO_LOG_LEVEL
               value: DEBUG
