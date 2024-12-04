@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: youtoo-ingestion
+  namespace: youtoo
+  labels:
+    app: youtoo-ingestion
+  annotations: {}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: youtoo-ingestion
+  template:
+    metadata:
+      labels:
+        app: youtoo-ingestion
+        app.kubernetes.io/name: youtoo-ingestion
+        app.kubernetes.io/version: 0.1.0-57e3098
+        app.kubernetes.io/part-of: youtoo
+      annotations:
+        sidecar.opentelemetry.io/inject: telemetry/youtoo-otel
+    spec:
+      containers:
+        - name: youtoo-ingestion
+          image: youtoo-ingestion:0.1.0-57e3098
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: web
+              containerPort: 8181
+          env:
+            - name: INGESTION_SNAPSHOTS_THRESHOLD
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: INGESTION_SNAPSHOTS_THRESHOLD
+            - name: DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: database-config
+                  key: DATABASE_URL
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: DATABASE_USERNAME
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: DATABASE_PASSWORD
+            - name: YOUTOO_LOG_LEVEL
+              value: DEBUG
+          resources:
+            limits:
+              cpu: 2
+              memory: 2Gi
+            requests:
+              cpu: 1
+              memory: 1Gi
+      restartPolicy: Always
+
