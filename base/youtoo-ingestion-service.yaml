@@ -18,4 +18,3 @@ spec:
       targetPort: 8889
       protocol: TCP
   type: ClusterIP
-
