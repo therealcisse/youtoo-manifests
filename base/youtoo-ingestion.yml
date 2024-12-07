@@ -36,8 +36,8 @@ spec:
                   key: INGESTION_SNAPSHOTS_THRESHOLD
             - name: DATABASE_URL
               valueFrom:
-                configMapKeyRef:
-                  name: database-config
+                secretKeyRef:
+                  name: youtoo-application-secrets
                   key: DATABASE_URL
             - name: DATABASE_USERNAME
               valueFrom:

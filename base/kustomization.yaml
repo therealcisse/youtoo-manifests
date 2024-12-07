@@ -3,9 +3,7 @@ resources:
   - youtoo-ingestion.yaml
   - youtoo-ingestion-service.yaml
   - ingestion-servicemonitor.yaml
-  - database-service.yaml
   - app-config.yaml
-  - database-config.yaml
 
 
 
